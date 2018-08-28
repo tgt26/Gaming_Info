@@ -1,1 +1,1 @@
-# Gaming-Info
+# Gaming Info
