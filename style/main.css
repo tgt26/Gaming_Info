@@ -1,0 +1,323 @@
+/* Core Styles */
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	padding-top: 4rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-align: center;
+	color: #424242;
+	text-transform: capitalize;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Navigation Bar */
+
+nav {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	position: fixed;
+	background: #eee;
+	z-index: 2;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 1rem;
+}
+
+nav a {
+	color: #424242;
+	font-weight: 700;
+}
+
+#resp-btn {
+	display: none;
+	padding: 0.5rem;
+	font-size: 1.5rem;
+	color: #424242;
+	cursor: pointer;
+}
+
+/* Landing and Welcome */
+
+/* header {
+  height: 100vh;
+  width: 100vw;
+} */
+
+.landing {
+	background-image: url(../images/header_image.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.welcome-screen {
+	padding: 1rem;
+}
+
+.display-it {
+	display: block;
+}
+
+/* Quote Section */
+
+aside {
+	background-color: #fff;
+}
+
+/* Youtube Gameplay Video */
+
+.youtube {
+	background-color: #000;
+	position: relative;
+	padding-top: 56.25%;
+	overflow: hidden;
+	cursor: pointer;
+	margin: 1rem 0;
+	display: none;
+}
+
+.youtube img {
+	width: 100%;
+	top: -16.84%;
+	left: 0;
+	opacity: 0.7;
+}
+
+.youtube .play-button {
+	width: 80px;
+	height: 80px;
+	background-color: #333;
+	box-shadow: 0 0 30px rgba( 0, 0, 0, 0.6);
+	z-index: 1;
+	opacity: 0.8;
+	border-radius: 50%;
+}
+
+.youtube .play-button:before {
+	content: "";
+	border-style: solid;
+	border-width: 15px 0 15px 26.0px;
+	border-color: transparent transparent transparent #fff;
+}
+
+.youtube img,
+.youtube .play-button {
+	cursor: pointer;
+}
+
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+	position: absolute;
+}
+
+.youtube .play-button,
+.youtube .play-button:before {
+	top: 50%;
+	left: 50%;
+	transform: translate3d( -50%, -50%, 0);
+}
+
+.youtube iframe {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.youtube img {
+	width: 100% !important;
+}
+
+.tooltip {
+	color: #E53935;
+	-webkit-animation: pulse 1s infinite;
+	animation: pulse 2s infinite;
+	font-size: 2rem;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	padding: 0 .5rem;
+}
+
+@keyframes pulse {
+	0% {
+		color: #CCC;
+	}
+	100% {
+		color: #E53935;
+	}
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	width: 160px;
+	background-color: #eeeeee;
+	color: #212121;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 10px;
+	padding: 5px 0;
+	position: absolute;
+	left: 47px;
+	bottom: -7px;
+	z-index: 1;
+	font-size: 1rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 500px) {
+	/* Navigation Bar */
+	#resp-btn {
+		display: block;
+		padding: 1rem;
+	}
+	nav ul {
+		max-height: 0;
+		transition: 1s ease-in-out;
+	}
+	nav ul li {
+		width: 90%;
+		text-align: center;
+		box-shadow: 0px 5px 10px 0px #e0e0e0;
+	}
+	.resp-nav {
+		max-height: 20rem;
+	}
+}
+
+@media (min-width: 320px) {
+	p {
+		padding: 1rem;
+	}
+	section {
+		margin-top: 3.5rem;
+	}
+	/* Landing Page */
+	.landing {
+		height: 22vh;
+	}
+	.welcome-screen p {
+		line-height: 1.5rem;
+	}
+	/* Quote Section */
+	aside {
+		padding: 1rem;
+	}
+	aside q {
+		font-style: italic;
+	}
+	/* History Section */
+	.history-inner-text {
+		padding: 1rem;
+		line-height: 1.5;
+	}
+	.history-image {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.dawn-section ul {
+		padding: 1rem;
+	}
+	.three-games-section img:first-child {
+		display: none;
+	}
+	/* Games Section */
+	#games img {
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+@media (min-width: 375px) {
+	.consoles img {
+		display: block;
+		margin: 0 auto;
+	}
+	/* Landing */
+	.landing {
+		height: 25vh;
+	}
+	/* Youtube Videos */
+	.youtube {
+		background-color: #000;
+		position: relative;
+		padding-top: 0;
+		overflow: hidden;
+		cursor: pointer;
+		margin: 1rem auto;
+		max-width: 300px;
+		height: 200px;
+	}
+	.youtube img {
+		top: -6.84%;
+	}
+}
+
+@media (min-width:768px) {
+	/* Landing */
+	.landing {
+		height: 50vh;
+	}
+	/* Quote Section */
+	.quote {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.history-image img {
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+	}
+	/* Consoles Sectiono */
+	.consoles {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 90%;
+		margin: 0 auto;
+	}
+	hr {
+		display: none;
+	}
+	.generations {
+		padding: 1rem 0;
+		border-bottom: 1px solid #EEEEEE;
+	}
+}
