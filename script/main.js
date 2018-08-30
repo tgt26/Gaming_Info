@@ -12,7 +12,7 @@ $("nav li a").click(function(e) {
 	let linkHrefs = $(this).attr("href");
 	$("html, body").animate(
 		{
-			scrollTop: $(linkHrefs).offset().top - navHeight //Substract height of nav
+			scrollTop: $(linkHrefs).offset().top - navHeight //Substract height of na
 		},
 		1500
 	);
