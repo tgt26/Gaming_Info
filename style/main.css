@@ -121,7 +121,7 @@ aside {
 	width: 80px;
 	height: 80px;
 	background-color: #333;
-	box-shadow: 0 0 30px rgba( 0, 0, 0, 0.6);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 	z-index: 1;
 	opacity: 0.8;
 	border-radius: 50%;
@@ -130,7 +130,7 @@ aside {
 .youtube .play-button:before {
 	content: "";
 	border-style: solid;
-	border-width: 15px 0 15px 26.0px;
+	border-width: 15px 0 15px 26px;
 	border-color: transparent transparent transparent #fff;
 }
 
@@ -150,7 +150,7 @@ aside {
 .youtube .play-button:before {
 	top: 50%;
 	left: 50%;
-	transform: translate3d( -50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
 }
 
 .youtube iframe {
@@ -165,22 +165,22 @@ aside {
 }
 
 .tooltip {
-	color: #E53935;
+	color: #e53935;
 	-webkit-animation: pulse 1s infinite;
 	animation: pulse 2s infinite;
 	font-size: 2rem;
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
-	padding: 0 .5rem;
+	padding: 0 0.5rem;
 }
 
 @keyframes pulse {
 	0% {
-		color: #CCC;
+		color: #ccc;
 	}
 	100% {
-		color: #E53935;
+		color: #e53935;
 	}
 }
 
@@ -202,7 +202,7 @@ aside {
 
 /* Media Queries */
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
 	/* Navigation Bar */
 	#resp-btn {
 		display: block;
@@ -231,7 +231,7 @@ aside {
 	}
 	/* Landing Page */
 	.landing {
-		height: 22vh;
+		height: 35vh;
 	}
 	.welcome-screen p {
 		line-height: 1.5rem;
@@ -273,7 +273,7 @@ aside {
 	}
 	/* Landing */
 	.landing {
-		height: 25vh;
+		height: 35vh;
 	}
 	/* Youtube Videos */
 	.youtube {
@@ -291,7 +291,19 @@ aside {
 	}
 }
 
-@media (min-width:768px) {
+@media (min-width: 425px) {
+	/* Welcome Page */
+	.landing {
+		height: 50vh;
+		background-size: contain;
+	}
+	.quote-background {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 768px) {
 	/* Landing */
 	.landing {
 		height: 50vh;
@@ -302,7 +314,7 @@ aside {
 		margin: 0 auto;
 	}
 	.history-image img {
-		width: 80%;
+		width: 60%;
 		margin: 0 auto;
 		display: block;
 	}
@@ -312,12 +324,17 @@ aside {
 		grid-template-columns: repeat(3, 1fr);
 		width: 90%;
 		margin: 0 auto;
+		grid-gap: 1rem;
 	}
 	hr {
 		display: none;
 	}
 	.generations {
 		padding: 1rem 0;
-		border-bottom: 1px solid #EEEEEE;
+		border-bottom: 1px solid #eeeeee;
+	}
+	/* Games Section */
+	#games img {
+		width: 60%;
 	}
 }
