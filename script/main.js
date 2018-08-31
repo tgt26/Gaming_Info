@@ -1,90 +1,141 @@
-/*jshint esversion: 6 */
+//DISPLAY VIDEO
 
-// Navigation Bar
-$("#resp-btn").click(function () {
-	$("nav ul").toggleClass("resp-nav");
-});
+//WARCRAFT
 
-// Smooth Scrolling to section
-const navHeight = $("nav").outerHeight(); //Get the height of the nav
-$("nav li a").click(function (e) {
-	e.preventDefault();
-	// Get href from every link
-	let linkHrefs = $(this).attr("href");
-	$("html, body").animate({
-			scrollTop: $(linkHrefs).offset().top - navHeight //Substract height of nav
-		},
-		1500
-	);
-	$("nav ul").toggleClass("resp-nav");
-
-});
-
-//Highlight current section
-$(window).scroll(function () {
-	let scrollbarLocation = $(this).scrollTop();
-	//console.log(scrollbarLocation);
-	$('nav li a').each(function () {
-		let sectionOffset = $(this.hash).offset().top - 66; //66 represents the navbar plus 1px. 
-
-		if (sectionOffset <= scrollbarLocation) {
-			$(this).addClass('active');
-			$(this).parent().siblings().children().removeClass('active'); //remove active class from other a tags
-		}
-	});
-
-});
-
-
-//----------------------------------------------------------------------------
-
-// Embeded Youtube Videos
-
-let youtube = $(".youtube");
-
-for (let i = 0; i < youtube.length; i++) {
-	let source =
-		"https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
-
-	let image = new Image();
-	image.src = source;
-	image.addEventListener(
-		"load",
-		(function () {
-			youtube[i].appendChild(image);
-		})(i)
-	);
-
-	youtube[i].addEventListener("click", function () {
-		let iframe = document.createElement("iframe");
-
-		iframe.setAttribute("frameborder", "0");
-		iframe.setAttribute("allowfullscreen", "");
-		iframe.setAttribute(
-			"src",
-			"https://www.youtube.com/embed/" +
-			this.dataset.embed +
-			"?rel=0&showinfo=0&autoplay=1"
-		);
-
-		this.innerHTML = "";
-		this.appendChild(iframe);
-	});
+function warcraftFunction(){
+var gameplay = document.getElementById('warcraftVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+//Oregon Trail
+function oregonFunction(){
+var gameplay = document.getElementById('oregonVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+//Mario 64
+function marioFunction(){
+var gameplay = document.getElementById('marioVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+//The Legend of Zelda
+function zeldaFunction(){
+var gameplay = document.getElementById('zeldaVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
 }
 
-//------------------------------------------------------------------------------------
-
-// Show videos when image is clicked
-let showVideo = document.querySelectorAll(".show-video");
-
-for (let i = 0; i < showVideo.length; i++) {
-	showVideo[i].addEventListener("click", function () {
-		youtube[i].style.display = "block";
-	});
+//Minecraft
+function minecraftFunction(){
+var gameplay = document.getElementById('minecraftVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
 }
 
-// Show tooltip when clicked
-let toolTip = document.querySelector(".tooltip");
-toolTip.addEventListener("click", function () {
-	document.querySelector(".tooltip-text").style.visibility = "visible";
-});
+//Ms. Pac-Man
+function pacmanFunction(){
+var gameplay = document.getElementById('pacmanVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+
+//Doom
+function doomFunction(){
+var gameplay = document.getElementById('doomVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+
+//The Legend of Zelda: Ocarina of Time
+function ocarinaFunction(){
+var gameplay = document.getElementById('ocarinaVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+
+//Mario 64
+function mario64Function(){
+var gameplay = document.getElementById('mario64Video');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+
+//Tetris
+function tetrisFunction(){
+var gameplay = document.getElementById('tetrisVideo');
+    if (gameplay.style.display === 'block') {
+        gameplay.style.display = 'none';
+    } else if (gameplay.style.display === 'none') {
+        gameplay.style.display = 'block';
+    } else {
+        gameplay.style.display = "block";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// MAKE TOP NAV RESPONSIVE
+
+function myFunction() {
+var x = document.getElementById("myTopnav");
+    if (x.className === "topNav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topNav";
+    }
+}
+
