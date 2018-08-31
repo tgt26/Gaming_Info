@@ -12,7 +12,7 @@ $("nav li a").click(function (e) {
 	// Get href from every link
 	let linkHrefs = $(this).attr("href");
 	$("html, body").animate({
-			scrollTop: $(linkHrefs).offset().top - navHeight //Substract height of na
+			scrollTop: $(linkHrefs).offset().top - navHeight //Substract height of nav
 		},
 		1500
 	);
@@ -25,7 +25,7 @@ $(window).scroll(function () {
 	let scrollbarLocation = $(this).scrollTop();
 	//console.log(scrollbarLocation);
 	$('nav li a').each(function () {
-		let sectionOffset = $(this.hash).offset().top;
+		let sectionOffset = $(this.hash).offset().top - 66; //66 represents the navbar plus 1px. 
 
 		if (sectionOffset <= scrollbarLocation) {
 			$(this).addClass('active');
