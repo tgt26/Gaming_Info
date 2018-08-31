@@ -6,7 +6,7 @@ $("#resp-btn").click(function () {
 });
 
 // Smooth Scrolling to section
-let navHeight = $("nav").outerHeight(); //Get the height of the nav
+const navHeight = $("nav").outerHeight(); //Get the height of the nav
 $("nav li a").click(function (e) {
 	e.preventDefault();
 	// Get href from every link
