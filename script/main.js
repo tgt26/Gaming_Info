@@ -12,7 +12,7 @@ window.onscroll = function () {
 	if (prevScrollPos > currentScrollPos) {
 		document.querySelector('nav').style.top = '0';
 	} else {
-		document.querySelector('nav').style.top = '-65px';
+		document.querySelector('nav').style.top = '-65px'; //65px is the heigh of navbar
 	}
 	prevScrollPos = currentScrollPos; //assign current pos of window to previous position so if statement validates
 };
