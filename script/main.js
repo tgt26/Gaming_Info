@@ -5,6 +5,19 @@ $("#resp-btn").click(function () {
 	$("nav ul").toggleClass("resp-nav");
 });
 
+// Hide Navbar on scroll 
+let prevScrollPos = window.pageYOffset; //window position on y-axis when page loads
+window.onscroll = function () {
+	let currentScrollPos = window.pageYOffset; //window position on y-axis when you scroll
+	if (prevScrollPos > currentScrollPos) {
+		document.querySelector('nav').style.top = '0';
+	} else {
+		document.querySelector('nav').style.top = '-65px';
+	}
+	prevScrollPos = currentScrollPos; //assign current pos of window to previous position so if statement validates
+};
+
+
 // Smooth Scrolling to section
 const navHeight = $("nav").outerHeight(); //Get the height of the nav
 $("nav li a").click(function (e) {
