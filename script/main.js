@@ -101,3 +101,26 @@ let toolTip = document.querySelector(".tooltip");
 toolTip.addEventListener("click", function () {
 	document.querySelector(".tooltip-text").style.visibility = "visible";
 });
+
+//Lazy Load images
+
+window.addEventListener('DOMContentLoaded', () => {
+	//selec every image with class of lazy
+	const lazyLoadImages = document.querySelectorAll('.lazy');
+
+	//init Observer
+	const imageObserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const image = entry.target;
+				image.src = image.dataset.src;
+				image.classList.remove('lazy');
+				imageObserver.unobserve(image);
+			}
+		});
+	});
+
+	lazyLoadImages.forEach((image) => {
+		imageObserver.observe(image);
+	});
+});
